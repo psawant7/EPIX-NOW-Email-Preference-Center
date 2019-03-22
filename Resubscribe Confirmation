@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>EPIX NOW - Resubscribed</title>
+	<link href="https://assets.appboycdn.com/email/unsubscribe/email-subscription-pages.css" rel="stylesheet" />
+	<style type="text/css">a:link {
+    color: #f48024;
+}
+body{padding:0;background:#e4e4e4}.main-container{width:700px;margin:auto;background:white;border-top:7px #02adc1 solid;box-shadow:0 2px 2px rgba(0,0,0,0.35)}.main-container .content{margin:40px 60px 30px 60px}.main-container .content h1{font-family:'Avenir LT W01 85 Heavy',helvetica,arial,sans-serif;font-size:27px;color:#222;text-align:left;line-height:22px;letter-spacing:-0.01em}.main-container .content p{font-family:'Avenir LT W01 65 Medium',helvetica,arial,sans-serif;font-size:17px;color:#666;text-align:left;line-height:25px}.main-container .footer{position:relative;height:45px}.main-container .footer img{position:absolute;bottom:20px;right:20px}
+
+a:visited 
+{
+    text-decoration: none; 
+    decoration: none; 
+    color: inherit;
+}
+
+	</style>
+</head>
+<body>
+<div class="main-container" style="background-color:#333333;color:white;border-top:0px;padding-top:20px;padding-bottom:20px;">
+  
+  
+ <div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="https://epixnow.onelink.me/UloJ/updatepref"><img alt="EPIX NOW" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c87d805733b167c586ffcbb/original.png?1552406533" style="border-width: 0px; border-style: solid; width: 154px; height: 32px;" /> </a></div> 
+  
+<div class="content">
+<h1><span style="color:#ffffff;">Welcome back!</span></h1>
+<img alt="" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c8913ba733b1606ca3aea2b/original.png?1552487354" style="width: 156px; height: 6px;" />
+<p><span style="color:#999999;">We’re glad to see you want to stay connected with us. Look out for the latest EPIX news and updates on our new shows and movies!</span></p>
+</div>
+</div>
+</body>
+</html>
