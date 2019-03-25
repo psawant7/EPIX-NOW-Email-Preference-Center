@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>EPIX NOW - Email Preference Center</title>
+	<link href="https://assets.appboycdn.com/email/unsubscribe/email-subscription-pages.css" rel="stylesheet" />
+  <style type="text/css">a:link {
+    color: #C7A338;
+}
+body{padding:0;background:#e4e4e4}.main-container{width:700px;margin:auto;background:white;border-top:7px #02adc1 solid;box-shadow:0 2px 2px rgba(0,0,0,0.35)}.main-container .content{margin:40px 60px 30px 60px}.main-container .content h1{font-family:'Avenir LT W01 85 Heavy',helvetica,arial,sans-serif;font-size:27px;color:#222;text-align:left;line-height:22px;letter-spacing:-0.01em}.main-container .content p{font-family:'Avenir LT W01 65 Medium',helvetica,arial,sans-serif;font-size:17px;color:#666;text-align:left;line-height:25px}.main-container .footer{position:relative;height:45px}.main-container .footer img{position:absolute;bottom:20px;right:20px}
+
+a:visited 
+{
+    text-decoration: none; 
+    decoration: none; 
+    color: inherit;
+}
+	</style>
+</head>
+<body>
+<div class="main-container" style="background-color:#333333;color:white;border-top:0px; padding-top:5px; padding-bottom:5px;">
+<div class="content">
+<div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center; padding-top:0px; padding-bottom:10px"><br />
+\<br />
+<br />
+ </div>
+  
+ <div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="https://www.epixnow.com/"><img alt="EPIX NOW" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c87d805733b167c586ffcbb/original.png?1552406533" style="border-width: 0px; border-style: solid; width: 154px; height: 32px;" /> </a></div> <br>
+
+<div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center"><a href="https://www.epixnow.com/"><img alt="EPIX Movies and Shows" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c87d83218bc0a494d0aa393/original.png?1552406578" style="border-width: 0px; border-style: solid; width: 600px;" /> </a></div>
+
+  <h1><br />
+<span style="color:#ffffff;">Update Your Email Preferences</span></h1>
+<img alt="EPIX NOW" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c8913ba733b1606ca3aea2b/original.png?1552487354" style="width: 156px; height: 6px;" />
+<span style="color:#FFFFFF;font=Avenir LT W01 85 Heavy,helvetica,arial,sans-serif;">
+ <p> <form action="https://rest.iad-01.braze.com/subscription/user/status" method="post">
+  <input type="checkbox" name="recommendations" value="399c656e-c66a-49ae-835b-896c2181d46c"><span style="color:#C7A338">&nbsp;&nbsp;<b>Recommended for You</b></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get suggestions for movies and shows we know you’ll like<br>
+  <input type="checkbox" name="new_releases" value="e975e9d7-4705-49fe-a2b7-d74caa9256d9"><span style="color:#C7A338">&nbsp;&nbsp;<b>New on EPIX</b></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don’t miss out! Get updated on the latest and greatest series and movies <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arriving on EPIX<br>
+  <input type="checkbox" name="newsletter" value="3b54bf1c-8715-4227-b04e-1b8056d142d5"><span style="color:#C7A338">&nbsp;&nbsp;<b>EPIX Monthly Newsletter</b></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receive one email a month with our top highlights and news<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </p>
+    <input type="submit" value="Update">
+  </form></>
+  <h4>
+<span style="color:#ffffff;"></span></h4>
+<a href="{{${set_user_to_opted_in_url}}}" style="text-decoration: none; color:#C7A338" class="js-unsubscribe-all"><b>Unsubsribe me from all emails</b></a></span></p>
+</div>
+</div>
+<script>
+(() => {
+  // https://davidwalsh.name/query-string-javascript
+  const _getUrlParam = (name) => {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1]);
+  };
+
+  const endpoint = 'https://rest.iad-01.braze.com';
+  const api_key = _getUrlParam('api_key') || '329075e8-a967-43be-aa9f-ec9d96a205dc';
+  const email = _getUrlParam('email') || 'psawant5791+test0311_2@gmail.com';
+  const form = document.querySelector('form');
+  const unsubscribeAllButton = document.querySelector('.js-unsubscribe-all');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  
+  const _handlePreferenceUpdate = e => {
+    e.preventDefault();
+    checkboxes.forEach(checkbox => _updatePreference(checkbox));
+  };
+  
+  const _handleUnsubscribeAll = e => {
+    e.preventDefault();
+
+    checkboxes.forEach(checkbox => checkbox.checked = false);
+
+    // Unsubscribe email
+    fetch(`${endpoint}/email/status`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        api_key,
+        email,
+        subscription_state: 'unsubscribed'
+      })
+    })
+    .then(resp => resp.json())
+    .then(({message}) => {
+      if (message && message === 'success') {
+        window.location = 'http://preferencecenter.epixnow.com/unsubscribe-confirmation.html';
+      }
+    });
+  };
+  
+  const _getPreferences = () => {
+    return fetch(`${endpoint}/subscription/user/status?api_key=${api_key}&email=${encodeURIComponent(email)}`);
+  };
+
+  const _updatePreference = checkbox => {
+    fetch(`${endpoint}/subscription/status/set`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        api_key,
+        email,
+        subscription_group_id: checkbox.value,
+        subscription_state: checkbox.checked ? 'subscribed' : 'unsubscribed'
+      })
+    });
+  };
+  
+  const _setCurrentPreferences = ({subscription_groups}) => {
+    if (subscription_groups.length) {
+      subscription_groups.forEach(group => {
+        if (group) {
+          const checkbox = document.querySelector(`input[name="${group.id}]"`);
+          if (checkbox) {
+            checkbox.checked = true;
+          } 
+        }
+      });
+    }
+  };
+  
+  /**
+   * Init
+   */
+
+  // Get email preferences
+  _getPreferences()
+    .then(resp => resp.json())
+    .then(({users}) => {
+      if (users && users.length) {
+        _setCurrentPreferences(users[0]);
+      }
+    });
+
+  // Event Listeners
+  form.addEventListener('submit', _handlePreferenceUpdate);
+  unsubscribeAllButton.addEventListener('click', _handleUnsubscribeAll);
+})();
+</script>
+</body>
+</html>
