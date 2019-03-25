@@ -107,6 +107,12 @@ a:visited
         subscription_group_id: checkbox.value,
         subscription_state: checkbox.checked ? 'subscribed' : 'unsubscribed'
       })
+    })
+    .then(resp => resp.json())
+    .then(({message}) => {
+      if (message && message === 'success') {
+        window.location = 'http://preferencecenter.epixnow.com/confirm.html';
+      }
     });
   };
   
