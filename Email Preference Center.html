@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="format-detection" content="date=no" /><meta name="format-detection" content="address=no" /><meta name="format-detection" content="telephone=no" /><meta name="x-apple-disable-message-reformatting" />
 		<head>
 			<title>EPIX NOW - Email Preference Center</title>
 			<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" rel="stylesheet" />
@@ -18,13 +18,25 @@ body{padding:0;background:#e4e4e4}.main-container{width:700px;margin:auto;backgr
 	  .footer{position:relative;height:45px}
 	  .main-container 
 	  .footer img{position:absolute;bottom:20px;right:20px}
+            
       
       .checkbox-style {
-  width: 15px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background: #b2b2b2;
 }
+    .mobile { 
+    display: block; 
+ }
+      .padded-multiline { 
+  line-height: 1.3; 
+  padding: 2px 0; 
+  border-left: 0px solid #232323;
+  width: 430px;
+  margin: 30px auto;
+}
 input[type=submit] {
+	-webkit-appearance: none; 
   background-color: #c7a338;
   width: 172px;
   height: 48px;
@@ -49,6 +61,50 @@ a:visited
     color: inherit;
     cursor: pointer;
 }
+                
+		@media only screen and (max-device-width: 480px), only screen and (max-width: 480px) {
+			.mobile-shell { width: 100% !important; min-width: 100% !important; }
+			.center { margin: 0 auto !important; }
+			.left { margin-right: auto !important; }
+
+            .reduce-logo {width:100px !important; height: auto !important;}
+
+			.td { width: 100% !important; min-width: 100% !important; }
+
+			.mobile-br-5 { height: 5px !important; }
+			.mobile-br-10 { height: 10px !important; }
+			.mobile-br-15 { height: 15px !important; }
+			.mobile-br-25 { height: 25px !important; }
+			.mobile-br-35 { height: 35px !important; }
+
+			.header { padding: 0px 0px 0px 0px !important; }
+			.content { padding: 0px 15px 40px 15px !important; }
+			.footer { padding: 30px 15px 40px 15px !important; }
+			.text-footer {text-align:left !important; width:100%;}
+				.footer { padding: 30px 15px 40px 15px !important; }
+				.text-footer-r,
+
+			.h2-right,
+			.text-right { text-align: left !important; }
+
+			.m-td,
+			.hide-for-mobile { display: none !important; width: 0 !important; height: 0 !important; font-size: 0 !important; line-height: 0 !important; min-height: 0 !important; }
+
+			.mobile-block { display: block !important; }
+			.img-m-center { text-align: center !important; }
+			.img-m-right { text-align: right !important; }
+
+			.fluid-img img { width: 100% !important; max-width: 100% !important; height: auto !important; }
+
+			.column,
+			.column-top,
+			.column-bottom,
+			.column-dir { float: left !important; width: 100% !important; display: block !important; }
+
+			.content-spacing { width: 15px !important; }
+			.content-spacing2 { width: 15px !important; height: auto !important; }
+			.mobile-bg { background-size: cover !important; height: auto !important; background-position: center 0 !important; }
+		}
 	</style>
 		
 </head>
@@ -61,13 +117,13 @@ a:visited
 						<br />
 						<br />
 					</div>
-					<div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center">
+					<div class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:center">
 						<a href="https://epixnow.onelink.me/UloJ/updatepref">
 							<img alt="EPIX NOW" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c87d805733b167c586ffcbb/original.png?1552406533" style="border-width: 0px; border-style: solid; width: 152px;" />
 						</a>
 					</div>
 					<br>
-						<div class="img-center" style="font-size:0pt; line-height:0pt; text-align:center">
+						<div class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:center">
 							<a href="https://epixnow.onelink.me/UloJ/updatepref">
 								<img alt="EPIX Movies and Shows" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c87d83218bc0a494d0aa393/original.png?1552406578" style="border-width: 0px; border-style: solid; width: 603px; height: 226px;" />
 							</a>
@@ -80,33 +136,28 @@ a:visited
 								</span>&nbsp;
 								<br>
 									<img alt="EPIX NOW" src="https://appboy-images.com/appboy/communication/assets/image_assets/images/5c8913ba733b1606ca3aea2b/original.png?1552487354" style="width: 111px; height: 4px; padding-top: 16px; padding-bottom: 10px" />
-									<span style="color:#f5f5f5;font-family: 'Noto Sans', Arial,sans-serif; font-size: 14px; font-weight: normal; line-height: 22px">
+									<span class="mobile" style="color:#f5f5f5;font-family: 'Noto Sans', Arial,sans-serif; font-size: 14px; font-weight: normal; line-height: 22px">
 										<p>
 											<form action="https://rest.iad-01.braze.com/subscription/user/status" method="post">
 												<input type="checkbox" name="recommendations" value="399c656e-c66a-49ae-835b-896c2181d46c" class="checkbox-style">
 													<span style="color:#f5f5f5; font-size: 16px;line-height: 35px;">&nbsp;
 														<b>Recommended for You</b>
 													</span>
-													<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get suggestions for movies and shows we know you&#39;ll like
-														<br>
-															<br>
+                                                <br><div class="padded-multiline" style="color:#f5f5f5;font-family: 'Noto Sans', Arial,sans-serif; font-size: 14px; font-weight: normal; margin-left:30px; margin-top: 0px;">Get suggestions for movies and shows we know you&#39;ll like </div>
 																<input type="checkbox" name="new_releases" value="e975e9d7-4705-49fe-a2b7-d74caa9256d9" class="checkbox-style">
 																	<span style="color:#f5f5f5;font-size: 16px;line-height: 35px;">&nbsp;
 																		<b>New on EPIX</b>
-																	</span>
-																	<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don&#39;t miss out! Get updated on the latest and greatest series<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and movies 
-																		arriving on EPIX
-																			<br>
-																				<br>
+																	</span><br>
+																	<div class="padded-multiline" style="color:#f5f5f5;font-family: 'Noto Sans', Arial,sans-serif; font-size: 14px; font-weight: normal;margin-top: 0px;  margin-left: 30px;">Don&#39;t miss out! Get updated on the latest and greatest series and movies arriving on EPIX</div>
 																					<input type="checkbox" name="newsletter" value="3b54bf1c-8715-4227-b04e-1b8056d142d5" class="checkbox-style">
 																						<span style="color:#f5f5f5;font-size: 16px;line-height: 35px;">&nbsp;
 																							<b>EPIX Monthly Newsletter</b>
 																						</span>
-																						<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receive one email a month with our top highlights and news
-																							<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <br><div class="padded-multiline" style="color:#f5f5f5;font-family: 'Noto Sans', Arial,sans-serif; font-size: 14px; font-weight: normal;margin-top: 0px;  margin-left: 30px;">Receive one email a month with our top highlights and news</div>
+																						
   
 																							</p>
-																							<span style="font-family: 'Noto Sans', Arial,sans-serif;">
+																							<span style="font-family: 'Noto Sans', Arial,sans-serif; margin: 0px;">
 																								<input type="submit" value="Update">
 																								</form>
 																								<br>
